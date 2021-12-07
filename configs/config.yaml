@@ -1,0 +1,25 @@
+name: apihut.server.name
+version: 0.0.1
+mode: 0 # 0:dev | 1:prod
+
+server:
+  http:
+    addr: 0.0.0.0:12138
+    timeout: 1s
+  grpc:
+    addr: 0.0.0.0:12139
+    timeout: 1s
+  etcd:
+    hosts:
+      - 127.0.0.1:2379
+
+data:
+  database:
+#    driver: mysql
+#    source: root:root@tcp(127.0.0.1:3306)/test
+    driver: sqlite3
+    source: file:test.db?_fk=1
+  redis:
+    addr: 127.0.0.1:6379
+    read_timeout: 0.2s
+    write_timeout: 0.2s
