@@ -66,7 +66,7 @@ build:
 .PHONY: run
 # build and run
 run:
-	make build && cd bin && ./$(PROJECT_NAME).exe
+	make build && cd bin && ./$(PROJECT_NAME).exe -conf ../configs
 
 .PHONY: crun
 # remove /bin and build and run
