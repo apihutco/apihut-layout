@@ -1,7 +1,7 @@
 package service
 
 import (
-	v12 "apihut-layout/api/v1"
+	v1 "apihut-layout/api/v1"
 	"context"
 
 	"apihut-layout/internal/biz"
@@ -11,7 +11,7 @@ import (
 
 // GreeterService is a greeter service.
 type GreeterService struct {
-	v12.UnimplementedGreeterServer
+	v1.UnimplementedGreeterServer
 
 	uc  *biz.GreeterUseCase
 	log *log.Helper
@@ -23,11 +23,11 @@ func NewGreeterService(uc *biz.GreeterUseCase, logger log.Logger) *GreeterServic
 }
 
 // SayHello implements helloworld.GreeterServer
-func (s *GreeterService) SayHello(ctx context.Context, in *v12.HelloRequest) (*v12.HelloReply, error) {
+func (s *GreeterService) SayHello(ctx context.Context, in *v1.HelloRequest) (*v1.HelloReply, error) {
 	s.log.WithContext(ctx).Infof("SayHello Received: %v", in.GetName())
 
 	if in.GetName() == "error" {
-		return nil, v12.ErrorUserNotFound("user not found: %s", in.GetName())
+		return nil, v1.ErrorUserNotFound("user not found: %s", in.GetName())
 	}
-	return &v12.HelloReply{Message: "Hello " + in.GetName()}, nil
+	return &v1.HelloReply{Message: "Hello " + in.GetName()}, nil
 }

@@ -2,14 +2,15 @@ package main
 
 import (
 	"apihut-layout/internal/conf"
+	logger2 "apihut-layout/internal/logger"
 	"flag"
 	"os"
 
-	"github.com/go-kratos/kratos/v2/config"
-	"github.com/go-kratos/kratos/v2/config/file"
-	"github.com/go-kratos/kratos/v2/middleware/tracing"
+	"go.uber.org/zap"
 
 	"github.com/go-kratos/kratos/v2"
+	"github.com/go-kratos/kratos/v2/config"
+	"github.com/go-kratos/kratos/v2/config/file"
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/go-kratos/kratos/v2/transport/grpc"
 	"github.com/go-kratos/kratos/v2/transport/http"
@@ -70,15 +71,14 @@ func main() {
 	Version = bc.GetVersion()
 
 	// 初始化日志
-	logger := log.With(log.NewStdLogger(os.Stdout),
-		"ts", log.DefaultTimestamp,
-		"caller", log.DefaultCaller,
-		"service.id", id,
-		"service.name", Name,
-		"service.version", Version,
-		"trace_id", tracing.TraceID(),
-		"span_id", tracing.SpanID(),
+	zapLogger := logger2.NewZapLogger(
+		logger2.NewEncoder(),
+		logger2.NewLumberWriter(bc.GetLog().GetPath(), conf.IsDevMode(bc.Mode)),
+		zap.NewAtomicLevelAt(zap.DebugLevel),
+		zap.AddCaller(),
 	)
+	defer func() { _ = zapLogger.Sync }()
+	logger := log.With(zapLogger)
 
 	// 初始化App
 	app, cleanup, err := initApp(bc.Server, bc.Data, logger)
@@ -88,7 +88,7 @@ func main() {
 	defer cleanup()
 
 	// 运行
-	if err := app.Run(); err != nil {
+	if err = app.Run(); err != nil {
 		panic(err)
 	}
 }

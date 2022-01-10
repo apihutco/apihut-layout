@@ -16,6 +16,11 @@ message Bootstrap {
   Mode mode = 3;
   Server server = 4;
   Data data = 5;
+  Log log = 6;
+}
+
+message Log {
+  string path = 1;
 }
 
 message Server {
