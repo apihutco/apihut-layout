@@ -1,3 +1,4 @@
+# 安全漏洞检查，扫描后结果将直接发送至仓库的security页
 name: CodeQL
 
 on:
@@ -17,7 +18,7 @@ jobs:
       - name: Init CodeQL
         uses: github/codeql-action/init@v1
         with:
-          language: go
+          languages: go
 
       - name: CodeQl Analysis
         uses: github/codeql-action/analyze@v1
