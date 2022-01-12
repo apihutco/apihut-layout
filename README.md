@@ -23,5 +23,5 @@ APIHut 项目模板
 
 ## Use
 ```shell
-kratos new 
+kratos new -r https://github.com/apihutco/apihut-layout.git
 ```
