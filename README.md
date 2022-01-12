@@ -1,5 +1,5 @@
 # APIHut Project Template
-[![Go](https://github.com/apihutco/apihut-layout/actions/workflows/go.yml/badge.svg)](https://github.com/apihutco/apihut-layout/actions/workflows/go.yml)
+[![Go](https://github.com/apihutco/apihut-layout/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/apihutco/apihut-layout/actions/workflows/go.yml)
 [![codecov](https://codecov.io/gh/apihutco/apihut-layout/branch/main/graph/badge.svg?token=MX523BC5CR)](https://codecov.io/gh/apihutco/apihut-layout)
 ![GitHub](https://img.shields.io/github/license/apihutco/apihut-layout)
 
