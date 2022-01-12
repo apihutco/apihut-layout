@@ -1,4 +1,9 @@
 # APIHut Project Template
+[![Go](https://github.com/apihutco/apihut-layout/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/apihutco/apihut-layout/actions/workflows/go.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/apihutco/apihut-layout.svg)](https://pkg.go.dev/github.com/apihutco/apihut-layout)
+[![codecov](https://codecov.io/gh/apihutco/apihut-layout/branch/main/graph/badge.svg?token=MX523BC5CR)](https://codecov.io/gh/apihutco/apihut-layout)
+[![Go Report Card](https://goreportcard.com/badge/github.com/apihutco/apihut-layout)](https://goreportcard.com/report/github.com/apihutco/apihut-layout)
+![GitHub](https://img.shields.io/github/license/apihutco/apihut-layout)
 
 APIHut 项目模板
 
@@ -15,3 +20,8 @@ APIHut 项目模板
 ## Data
 
 内置 Ent ORM
+
+## Use
+```shell
+kratos new 
+```
