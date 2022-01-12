@@ -5,7 +5,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/apihutco/apihut-layout)](https://goreportcard.com/report/github.com/apihutco/apihut-layout)
 ![GitHub](https://img.shields.io/github/license/apihutco/apihut-layout)
 
-APIHut 项目模板
+APIHut 项目模板,使用 [Kratos](https://github.com/go-kratos/kratos) 框架
 
 ## Make
 
@@ -18,8 +18,10 @@ APIHut 项目模板
 - 新增 `make wire` 命令以生成依赖注入代码
 
 ## Data
+集成 Ent ORM
 
-内置 Ent ORM
+## Log
+集成 Zap 日志库
 
 ## Use
 ```shell
