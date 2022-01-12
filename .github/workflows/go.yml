@@ -1,0 +1,28 @@
+name: Go
+on:
+  - push
+
+jobs:
+  build:
+    name: build & test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2 # 使用官方提供actions签出仓库
+
+      - name: Set up Go
+        uses: actions/setup-go@v2 # 使用官方的actions初始化go环境
+        with:
+          go-version: 1.16 # 指定go版本
+
+      - name: Build
+        run: go build -v ./... # -v 打印构建出来的文件名
+
+      - name: Test
+#        run: go test -v ./...
+        run: go test -v -race -covermode=atomic -coverprofile=coverage.out ./... # 生成覆盖率测试报告，用以上传codecov
+
+      - name: Codecov
+        uses: codecov/codecov-action@v2.1.0 # 上报测试覆盖率，需在 https://about.codecov.io/ 注册账号并在GitHub设置secrets
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}

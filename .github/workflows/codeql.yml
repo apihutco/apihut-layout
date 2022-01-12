@@ -1,0 +1,24 @@
+name: CodeQL
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Init CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          language: go
+
+      - name: CodeQl Analysis
+        uses: github/codeql-action/analyze@v1
+
