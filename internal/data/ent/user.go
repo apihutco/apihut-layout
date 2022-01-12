@@ -3,11 +3,11 @@
 package ent
 
 import (
-	"apihut-layout/internal/data/ent/user"
 	"fmt"
 	"strings"
 
 	"entgo.io/ent/dialect/sql"
+	"github.com/apihutco/apihut-layout/internal/data/ent/user"
 	"github.com/google/uuid"
 )
 

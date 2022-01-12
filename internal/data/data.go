@@ -1,9 +1,10 @@
 package data
 
 import (
-	"apihut-layout/internal/conf"
-	"apihut-layout/internal/data/ent"
 	"context"
+
+	"github.com/apihutco/apihut-layout/internal/conf"
+	"github.com/apihutco/apihut-layout/internal/data/ent"
 
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/google/wire"

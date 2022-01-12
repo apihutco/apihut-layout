@@ -1,8 +1,8 @@
 package data
 
 import (
-	"apihut-layout/internal/biz"
 	"context"
+	"github.com/apihutco/apihut-layout/internal/biz"
 
 	"github.com/go-kratos/kratos/v2/log"
 )

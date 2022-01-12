@@ -3,14 +3,14 @@
 package ent
 
 import (
-	"apihut-layout/internal/data/ent/predicate"
-	"apihut-layout/internal/data/ent/user"
 	"context"
 	"fmt"
 
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
+	"github.com/apihutco/apihut-layout/internal/data/ent/predicate"
+	"github.com/apihutco/apihut-layout/internal/data/ent/user"
 )
 
 // UserUpdate is the builder for updating User entities.

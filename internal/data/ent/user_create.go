@@ -3,13 +3,13 @@
 package ent
 
 import (
-	"apihut-layout/internal/data/ent/user"
 	"context"
 	"errors"
 	"fmt"
 
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
+	"github.com/apihutco/apihut-layout/internal/data/ent/user"
 	"github.com/google/uuid"
 )
 

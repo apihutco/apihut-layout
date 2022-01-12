@@ -3,8 +3,6 @@
 package ent
 
 import (
-	"apihut-layout/internal/data/ent/predicate"
-	"apihut-layout/internal/data/ent/user"
 	"context"
 	"errors"
 	"fmt"
@@ -13,6 +11,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
+	"github.com/apihutco/apihut-layout/internal/data/ent/predicate"
+	"github.com/apihutco/apihut-layout/internal/data/ent/user"
 	"github.com/google/uuid"
 )
 
