@@ -21,6 +21,6 @@ jobs:
         with:
           languages: go
 
-      - name: CodeQl Analysis
+      - name: CodeQL Analysis
         uses: github/codeql-action/analyze@v1
 
