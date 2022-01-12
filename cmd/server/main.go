@@ -1,10 +1,11 @@
 package main
 
 import (
-	"apihut-layout/internal/conf"
-	logger2 "apihut-layout/internal/logger"
 	"flag"
 	"os"
+
+	"github.com/apihutco/apihut-layout/internal/conf"
+	logger2 "github.com/apihutco/apihut-layout/internal/logger"
 
 	"go.uber.org/zap"
 

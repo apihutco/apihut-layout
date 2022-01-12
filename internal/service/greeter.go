@@ -1,10 +1,11 @@
 package service
 
 import (
-	v1 "apihut-layout/api/v1"
 	"context"
 
-	"apihut-layout/internal/biz"
+	v1 "github.com/apihutco/apihut-layout/api/v1"
+
+	"github.com/apihutco/apihut-layout/internal/biz"
 
 	"github.com/go-kratos/kratos/v2/log"
 )

@@ -3,9 +3,10 @@
 package hook
 
 import (
-	"apihut-layout/internal/data/ent"
 	"context"
 	"fmt"
+
+	"github.com/apihutco/apihut-layout/internal/data/ent"
 )
 
 // The UserFunc type is an adapter to allow the use of ordinary

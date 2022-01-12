@@ -3,10 +3,11 @@
 package enttest
 
 import (
-	"apihut-layout/internal/data/ent"
 	"context"
+
+	"github.com/apihutco/apihut-layout/internal/data/ent"
 	// required by schema hooks.
-	_ "apihut-layout/internal/data/ent/runtime"
+	_ "github.com/apihutco/apihut-layout/internal/data/ent/runtime"
 
 	"entgo.io/ent/dialect/sql/schema"
 )

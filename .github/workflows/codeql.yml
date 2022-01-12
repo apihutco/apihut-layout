@@ -6,6 +6,7 @@ on:
     branches:
       - main
       - dev
+  pull_request: null
 
 jobs:
   analyze:

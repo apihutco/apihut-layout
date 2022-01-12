@@ -1,4 +1,4 @@
-module apihut-layout
+module github.com/apihutco/apihut-layout
 
 go 1.16
 

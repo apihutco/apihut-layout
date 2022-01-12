@@ -3,9 +3,8 @@
 package user
 
 import (
-	"apihut-layout/internal/data/ent/predicate"
-
 	"entgo.io/ent/dialect/sql"
+	"github.com/apihutco/apihut-layout/internal/data/ent/predicate"
 	"github.com/google/uuid"
 )
 

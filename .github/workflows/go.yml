@@ -1,6 +1,8 @@
 name: Go
 on:
-  - push
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -8,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2 # 使用官方提供actions签出仓库
+        uses: actions/checkout@v2.3.5 # 使用官方提供actions签出仓库
 
       - name: Set up Go
         uses: actions/setup-go@v2 # 使用官方的actions初始化go环境

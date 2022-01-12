@@ -3,12 +3,12 @@
 package ent
 
 import (
-	"apihut-layout/internal/data/ent/predicate"
-	"apihut-layout/internal/data/ent/user"
 	"context"
 	"fmt"
 	"sync"
 
+	"github.com/apihutco/apihut-layout/internal/data/ent/predicate"
+	"github.com/apihutco/apihut-layout/internal/data/ent/user"
 	"github.com/google/uuid"
 
 	"entgo.io/ent"

@@ -5,11 +5,11 @@
 package main
 
 import (
-	"apihut-layout/internal/biz"
-	"apihut-layout/internal/conf"
-	"apihut-layout/internal/data"
-	"apihut-layout/internal/server"
-	"apihut-layout/internal/service"
+	"github.com/apihutco/apihut-layout/internal/biz"
+	"github.com/apihutco/apihut-layout/internal/conf"
+	"github.com/apihutco/apihut-layout/internal/data"
+	"github.com/apihutco/apihut-layout/internal/server"
+	"github.com/apihutco/apihut-layout/internal/service"
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/google/wire"

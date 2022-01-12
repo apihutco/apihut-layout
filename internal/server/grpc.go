@@ -1,9 +1,9 @@
 package server
 
 import (
-	v1 "apihut-layout/api/v1"
-	"apihut-layout/internal/conf"
-	"apihut-layout/internal/service"
+	v1 "github.com/apihutco/apihut-layout/api/v1"
+	"github.com/apihutco/apihut-layout/internal/conf"
+	"github.com/apihutco/apihut-layout/internal/service"
 
 	"github.com/go-kratos/kratos/v2/middleware/validate"
 

@@ -3,9 +3,8 @@
 package ent
 
 import (
-	"apihut-layout/internal/data/ent/schema"
-	"apihut-layout/internal/data/ent/user"
-
+	"github.com/apihutco/apihut-layout/internal/data/ent/schema"
+	"github.com/apihutco/apihut-layout/internal/data/ent/user"
 	"github.com/google/uuid"
 )
 

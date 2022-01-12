@@ -7,13 +7,13 @@ import (
 	"fmt"
 	"log"
 
-	"apihut-layout/internal/data/ent/migrate"
+	"github.com/apihutco/apihut-layout/internal/data/ent/migrate"
+	"github.com/google/uuid"
 
-	"apihut-layout/internal/data/ent/user"
+	"github.com/apihutco/apihut-layout/internal/data/ent/user"
 
 	"entgo.io/ent/dialect"
 	"entgo.io/ent/dialect/sql"
-	"github.com/google/uuid"
 )
 
 // Client is the client that holds all ent builders.

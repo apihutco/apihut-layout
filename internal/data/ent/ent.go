@@ -3,12 +3,12 @@
 package ent
 
 import (
-	"apihut-layout/internal/data/ent/user"
 	"errors"
 	"fmt"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
+	"github.com/apihutco/apihut-layout/internal/data/ent/user"
 )
 
 // ent aliases to avoid import conflicts in user's code.
