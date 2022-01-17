@@ -4,9 +4,11 @@ import (
 	"flag"
 	"os"
 
-	"github.com/apihutco/apihut-layout/internal/conf"
-	logger2 "github.com/apihutco/apihut-layout/internal/logger"
+	"github.com/go-kratos/kratos/v2/registry"
 
+	zapLogger "github.com/apihutco/apihut-layout/pkg/zap_logger"
+
+	"github.com/apihutco/apihut-layout/internal/conf"
 	"go.uber.org/zap"
 
 	"github.com/go-kratos/kratos/v2"
@@ -33,7 +35,7 @@ func init() {
 	flag.StringVar(&confPath, "conf", "../configs", "config path, eg: -conf config.yaml")
 }
 
-func newApp(logger log.Logger, hs *http.Server, gs *grpc.Server) *kratos.App {
+func newApp(logger log.Logger, hs *http.Server, gs *grpc.Server, rr registry.Registrar) *kratos.App {
 	return kratos.New(
 		kratos.ID(id),
 		kratos.Name(Name),
@@ -44,6 +46,7 @@ func newApp(logger log.Logger, hs *http.Server, gs *grpc.Server) *kratos.App {
 			hs,
 			gs,
 		),
+		kratos.Registrar(rr),
 	)
 }
 
@@ -67,22 +70,26 @@ func main() {
 		panic(err)
 	}
 
+	var rc conf.Registry
+	if err := c.Scan(&rc); err != nil {
+		panic(err)
+	}
+
 	// 赋值全局变量
 	Name = bc.GetName()
 	Version = bc.GetVersion()
 
 	// 初始化日志
-	zapLogger := logger2.NewZapLogger(
-		logger2.NewEncoder(),
-		logger2.NewLumberWriter(bc.GetLog().GetPath(), conf.IsDevMode(bc.Mode)),
+	logger := zapLogger.NewZapLogger(
+		zapLogger.NewEncoder(),
+		zapLogger.NewLumberWriter(bc.GetLog().GetPath(), conf.IsDevMode(bc.Mode)),
 		zap.NewAtomicLevelAt(zap.DebugLevel),
 		zap.AddCaller(),
 	)
-	defer func() { _ = zapLogger.Sync }()
-	logger := log.With(zapLogger)
+	defer func() { _ = logger.Sync }()
 
 	// 初始化App
-	app, cleanup, err := initApp(bc.Server, bc.Data, logger)
+	app, cleanup, err := initApp(bc.Server, bc.Data, &rc, logger)
 	if err != nil {
 		panic(err)
 	}

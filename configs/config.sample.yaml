@@ -9,9 +9,6 @@ server:
   grpc:
     addr: 0.0.0.0:12139
     timeout: 1s
-  etcd:
-    hosts:
-      - 127.0.0.1:2379
 
 data:
   database:
@@ -26,3 +23,11 @@ data:
 
 log:
   path: ./logs/221.log
+
+nacos:
+  address: 106.55.209.187
+  port: 8848
+  namespace_id: public
+  timeout: 5s
+  log_dir: ./tmp/nacos/log
+  cache_dir: ./tmp/nacos/cache

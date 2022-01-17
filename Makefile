@@ -13,7 +13,6 @@ init:
 	go get -u github.com/go-kratos/kratos/cmd/protoc-gen-go-http/v2
 	go get -u github.com/go-kratos/kratos/cmd/protoc-gen-go-errors/v2
 
-
 .PHONY: api
 # generate api proto
 api:
@@ -26,7 +25,6 @@ api:
  	       --go-errors_out=paths=source_relative:. \
 	       $(API_PROTO_FILES)
 
-
 .PHONY: config
 # generate internal proto
 config:
@@ -34,7 +32,6 @@ config:
 	       --proto_path=./third_party \
  	       --go_out=paths=source_relative:. \
 	       $(INTERNAL_PROTO_FILES)
-
 
 .PHONY: ent
 # generate ent
@@ -51,12 +48,10 @@ wire:
 server:
 	kratos proto server $(API_PROTO_FILES) -t internal/service
 
-
 .PHONY: generate
 # equal go generate ./...
 generate:
 	go generate ./...
-
 
 .PHONY: build
 # build
@@ -66,13 +61,7 @@ build:
 .PHONY: run
 # build and run
 run:
-	make build && cd bin && ./$(PROJECT_NAME).exe -conf ../configs
-
-.PHONY: crun
-# remove /bin and build and run
-crun:
-	rm -rf bin && make run
-
+	make build && cd bin && ./$(PROJECT_NAME).exe -conf ../configs/config.yaml
 
 .PHONY: all
 # generate all

@@ -17,11 +17,13 @@ APIHut 项目模板,使用 [Kratos](https://github.com/go-kratos/kratos) 框架
 - 新增 `make ent` 命令以生成 ent 代码
 - 新增 `make wire` 命令以生成依赖注入代码
 
-## Data
-集成 Ent ORM
+## 组件
+|组件|名称|
+|---|---|
+|Data|Ent|
+|Log|Zap|
+|服务发现|Nacos|
 
-## Log
-集成 Zap 日志库
 
 ## Use
 ```shell

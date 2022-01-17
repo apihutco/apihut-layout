@@ -28,7 +28,9 @@ Thumbs.db
 *.cert
 *.key
 *.log
+*.yaml
 bin/
+!*.sample.yaml
 
 # Develop tools
 .vscode/
